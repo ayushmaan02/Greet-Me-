@@ -1,22 +1,30 @@
 const main = async () => {
-    const [owner, randomPerson] = await hre.ethers.getSigners();
+    // const [owner, randomPerson] = await hre.ethers.getSigners();
     const greetContractFactory = await hre.ethers.getContractFactory("GreetPortal");
     const greetContract = await greetContractFactory.deploy();
     await greetContract.deployed();
-
     console.log("Contract deployed to:", greetContract.address);
-    console.log("Contract deployed by:", owner.address);
-
+    
+    // console.log("Contract deployed by:", owner.address);
     let greetCount;
     greetCount = await greetContract.getTotalGreet();   //Total count of how many greets recived
+    console.log(greetCount.toNumber());
 
-    let greetTxn = await greetContract.greet();   //Greeting ourself(Owner greets itself)
+
+    let greetTxn = await greetContract.greet("Test Message!!");   //Greeting ourself(Owner greets itself)
+    await greetTxn.wait();    //Wait for transction to be mined
+
+    // greetCount = await greetContract.getTotalGreet();
+
+    const [_, randomPerson] = await hre.ethers.getSigners();
+    greetTxn = await greetContract.connect(randomPerson).greet("Another Message by randome!!");
     await greetTxn.wait();
 
-    greetCount = await greetContract.getTotalGreet();
+    // greetTxn = await greetContract.connect(randomPerson).greet();   //Greeting done by a random person 
+    // await greetTxn.wait();
 
-    greetTxn = await greetContract.connect(randomPerson).greet();   //Greeting done by a random person 
-    await greetTxn.wait();
+    let allGreets = await greetContract.getAllGreets();
+    console.log(allGreets);
 
     greetCount = await greetContract.getTotalGreet();
   };
