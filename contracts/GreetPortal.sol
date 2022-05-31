@@ -30,7 +30,7 @@ contract GreetPortal {
     function greet(string memory _message) public {
 
         //Cooldown added of 15 min to stop spamming 
-        require(lastGreetAt[msg.sender] + 15 minutes < block.timestamp, "Cooldown Process Wait for 15m");
+        require(lastGreetAt[msg.sender] + 30 seconds < block.timestamp, "Cooldown Process Wait for 30sec");
         lastGreetAt[msg.sender] = block.timestamp;
 
         totalGreet += 1;
