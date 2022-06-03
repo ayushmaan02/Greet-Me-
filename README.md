@@ -2,10 +2,10 @@
 ## A Web3 App using Solidity
 Access the React source code https://replit.com/@ayushmaan02/Greet-Me
 
-- [x] Deployed a custom smart contract.
-- [x] Built a "Connect Wallet" flow.
-- [x] Created my own version of a web3 Jackpot!
-- 🌐Access it https://greet-me.ayushmaan02.repl.co
+- [x] ✅ Deployed a custom smart contract.
+- [x] ✅Built a "Connect Wallet" flow.
+- [x] ✅Created my own version of a web3 Jackpot!
+- [x] 🌐Access it https://greet-me.ayushmaan02.repl.co
 
 
 ![image](https://user-images.githubusercontent.com/66905426/171848752-84dfece4-da66-4d1c-92ef-512a0d7b79cc.png)
