@@ -10,7 +10,9 @@ Access the React source code https://replit.com/@ayushmaan02/Greet-Me
 
 ![image](https://user-images.githubusercontent.com/66905426/171848752-84dfece4-da66-4d1c-92ef-512a0d7b79cc.png)
 
-
+## **Demo**
+*How the transction process works and How I receives the greets🚀*
+![demo](demo.gif)
 
 <!-- # Basic Sample Hardhat Project
 
